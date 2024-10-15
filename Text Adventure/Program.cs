@@ -6,29 +6,37 @@ namespace Text_Adventure
     {
         static int age;
 
+        /// <summary>
+        /// writes text letter by letter
+        /// </summary>
+        /// <param name="text">the text to print</param>
         static void WriteLetterByLetter(string text)
         {
             for (int i = 0; i < text.Length; ++i)
             {
                 Console.Write(text[i]);
-                Thread.Sleep(20);
+                Thread.Sleep(15); // adjusts the speed at which the text is typed out
             }
 
             Console.WriteLine();
         }
 
-        static void EndOfGame()
+        static void EndOfGame() //expo dump for the end of the game
         {
             // End of game
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(">");
+            Console.ForegroundColor = ConsoleColor.Green; // changes the color of the text from white to green
+            Console.Write(">"); // indicates where the player can type
             string input6 = Console.ReadLine();
             if (input6 == "open door")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 WriteLetterByLetter("Finally, what took you so long.");
-                Thread.Sleep(1000);
+                Thread.Sleep(1000); // changes how long the player has to wait until the next line is displayed
                 WriteLetterByLetter("You know what never mind, we have to go.");
+                Thread.Sleep(3000);
+                WriteLetterByLetter("What is that noise?");
+                Thread.Sleep(1500);
+                WriteLetterByLetter("BEAR!!");
             }
             else
             {
@@ -38,25 +46,27 @@ namespace Text_Adventure
             }
         }
 
-        static void SegmentFour()
+        static void SegmentFour() // expo dump for segment four
         {
             // Segment 4
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">");
             string input5 = Console.ReadLine();
-            if (input5 == "grab bearspray")
+            if (input5 == "grab bear spray")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("I'll stow this just in case");
                 Thread.Sleep(1500);
                 WriteLetterByLetter("I guess my only option is to open the door");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("open door  |--------");
             }
             else if (input5 == "go to basement")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("'You forgot you have a cripling fear of the dark, so you quickly run back up'");
+                Console.WriteLine("'You forgot you have a crippling fear of the dark, so you quickly run back up'"); 
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("open door  |--------");
             }
@@ -68,7 +78,7 @@ namespace Text_Adventure
             }
         }
 
-        static void SegmentThree()
+        static void SegmentThree() //expo dump for segment three
         {
             // Segment 3
             Console.Write(">");
@@ -77,9 +87,10 @@ namespace Text_Adventure
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("'I need to clean up down here'");
+                Console.WriteLine();
                 Thread.Sleep(1500);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("grab bearspray  |  go to basement");
+                Console.WriteLine("grab bear-spray  |  go to basement");
             }
             else if (input4 == "stay")
             {
@@ -87,12 +98,12 @@ namespace Text_Adventure
                 Console.WriteLine("Hmmmm");
                 WriteLetterByLetter("HEY GUYS NEVER MIND I'M NOT GOING");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("----------------------------------");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
                 WriteLetterByLetter("WHAT THE HECK! WE'VE BEEN PLANING THIS FOR AGES");
                 WriteLetterByLetter("YOU KNOW WHAT WE DON'T NEED YOU ANYWAYS");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("----------------------------------");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("You Died of Loneliness Because You No Longer Have Friends");
             }
@@ -104,7 +115,7 @@ namespace Text_Adventure
             }
         }
 
-        static void SegmentTwo()
+        static void SegmentTwo() // expo dump for segment two
         {
             // Segment 2
             Console.ForegroundColor = ConsoleColor.Green;
@@ -114,6 +125,7 @@ namespace Text_Adventure
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("Okay I should be good to go");
+                Console.WriteLine();
                 Thread.Sleep(1000);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("go down stairs  |  stay");
@@ -127,7 +139,7 @@ namespace Text_Adventure
             }
         }
 
-        static void SegmentOne()
+        static void SegmentOne() //expo dump for segment one
         {
             // Segment 1
             Console.ForegroundColor = ConsoleColor.Green;
@@ -149,10 +161,12 @@ namespace Text_Adventure
             else if (input2 == "stay in bed")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                WriteLetterByLetter("You got a blood cloat in your brain becuse you were inactive for too long");
+                WriteLetterByLetter("You got a blood clout in your brain because you were inactive for too long");
                 Console.WriteLine();
                 Thread.Sleep(1500);
                 Console.WriteLine("GAME OVER");
+                Thread.Sleep(800);
+                WriteLetterByLetter("type reset to reset");
             }
             else
             {
@@ -162,9 +176,18 @@ namespace Text_Adventure
             }
         }
 
-        
+        static void ResetGame()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(">");
+            string input6 = Console.ReadLine();
+            if (input6 == "reset")
+            {
 
-        static void StartOfGame()
+            }
+        }
+
+        static void StartOfGame() //expo dump for the start of the game
         {
             // intro 2/start of game
             Console.ForegroundColor = ConsoleColor.Green;
@@ -192,7 +215,7 @@ namespace Text_Adventure
             }
         }
 
-        static void AskAge()
+        static void AskAge() //expo dump for the ask age stuffs
         {
             WriteLetterByLetter("Enter age here");
             Console.WriteLine();
@@ -200,18 +223,34 @@ namespace Text_Adventure
             Console.Write("> "); // lets the player put in there age
             age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-            
+            if (age < 1*2+6*5+2/2+2)//change this
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                WriteLetterByLetter("sorry you are not old enough to play this game");
+                AskAge();
+            }
+            if (age > 17)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("Disclaimer This Game Contains Violence And People");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                WriteLetterByLetter("Invalid response please try again");
+                AskAge();
+            }
         }
 
 
-        static void IntroToGame()
+        static void IntroToGame() //expo dump for the intro to the game
         {
             // intro to game
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Title = ("Gone Hiking");
+            Console.Title = ("Gone Hiking Part 1");
             Console.WriteLine("Jaquavis Studios Presents");
             Thread.Sleep(3000);
-            Console.WriteLine("Gone Hiking");
+            Console.WriteLine("Gone Hiking  Part 1");
             Console.WriteLine();
             Thread.Sleep(2000);
             AskAge();
@@ -225,7 +264,7 @@ namespace Text_Adventure
 
         static void Main(string[] args)
         {
-            
+            // expo dump "outlet"
             IntroToGame();
 
             StartOfGame();
@@ -246,6 +285,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("TO BE CONTINUED");
 
+            // allows the player to see and read the console
             Console.ReadKey();
 
             
