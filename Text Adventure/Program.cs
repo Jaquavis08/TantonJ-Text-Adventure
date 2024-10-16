@@ -2,9 +2,30 @@
 
 namespace Text_Adventure
 {
+
+    struct PlayerData
+    {
+        public string Name;
+    }
+
     internal class Program
     {
+        
+       
+
+        enum WeaponType
+        {
+            Fist,
+            Bearspray,
+        }
+
+        PlayerData player = new()
+        {
+            Name = "Plop",
+        };
+
         static int age;
+        
 
         /// <summary>
         /// writes text letter by letter
@@ -89,8 +110,9 @@ namespace Text_Adventure
                 WriteLetterByLetter("'I need to clean up down here'");
                 Console.WriteLine();
                 Thread.Sleep(1500);
+                Console.WriteLine("Oooo, Bearspray");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("grab bear-spray  |  go to basement");
+                Console.WriteLine("grab bear spray  |  go to basement");
             }
             else if (input4 == "stay")
             {
@@ -197,6 +219,7 @@ namespace Text_Adventure
             {
                 
                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine();
                 WriteLetterByLetter("BANG! BANG! BANG! DING! DONG! DING! DONG! BANG! BANG! BANG!");
                 Thread.Sleep(1000);
                 WriteLetterByLetter("DUDE GET UP! ITS TIME TO GO! WERE GOING TO BE LATE!");
@@ -217,19 +240,25 @@ namespace Text_Adventure
 
         static void AskAge() //expo dump for the ask age stuffs
         {
+            
+            
+
             WriteLetterByLetter("Enter age here");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("> "); // lets the player put in there age
             age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-            if (age < 1*2+6*5+2/2+2)//change this
+
+           
+            if (age < 1*2+6*5-16+2)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 WriteLetterByLetter("sorry you are not old enough to play this game");
+                Console.WriteLine();
                 AskAge();
             }
-            if (age > 17)
+            else if (age > 17-7*1+7)
             {
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("Disclaimer This Game Contains Violence And People");
@@ -264,6 +293,7 @@ namespace Text_Adventure
 
         static void Main(string[] args)
         {
+            string[] weapons = { "Fist", "Bearspray" };
             // expo dump "outlet"
             IntroToGame();
 
@@ -279,12 +309,19 @@ namespace Text_Adventure
 
             EndOfGame();
 
-
+            
 
 
             Console.ForegroundColor = ConsoleColor.Red;
+            Thread.Sleep(2000);
             Console.WriteLine("TO BE CONTINUED");
 
+            //for (int i = 0; i < weapons.Length; i++)
+            //{
+            //    int rank = i + 1;
+            //    Console.WriteLine(rank + ". " + weapons[i]);
+            //}
+            
             // allows the player to see and read the console
             Console.ReadKey();
 
