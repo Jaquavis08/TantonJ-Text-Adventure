@@ -48,7 +48,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Green; // changes the color of the text from white to green
             Console.Write(">"); // indicates where the player can type
             string input6 = Console.ReadLine();
-            if (input6 == "open door")
+            if (input6 == "a")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 WriteLetterByLetter("Finally, what took you so long.");
@@ -58,6 +58,7 @@ namespace Text_Adventure
                 WriteLetterByLetter("What is that noise?");
                 Thread.Sleep(1500);
                 WriteLetterByLetter("BEAR!!");
+                Console.WriteLine();
             }
             else
             {
@@ -73,7 +74,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">");
             string input5 = Console.ReadLine();
-            if (input5 == "grab bear spray")
+            if (input5 == "a")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("I'll stow this just in case");
@@ -83,9 +84,10 @@ namespace Text_Adventure
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("open door  |--------");
             }
-            else if (input5 == "go to basement")
+            else if (input5 == "d")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine();
                 Console.WriteLine("'You forgot you have a crippling fear of the dark, so you quickly run back up'"); 
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -104,17 +106,17 @@ namespace Text_Adventure
             // Segment 3
             Console.Write(">");
             string input4 = Console.ReadLine();
-            if (input4 == "go down stairs")
+            if (input4 == "a")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("'I need to clean up down here'");
-                Console.WriteLine();
                 Thread.Sleep(1500);
                 Console.WriteLine("Oooo, Bearspray");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("grab bear spray  |  go to basement");
             }
-            else if (input4 == "stay")
+            else if (input4 == "d")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Hmmmm");
@@ -143,7 +145,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">");
             string input3 = Console.ReadLine();
-            if (input3 == "grab bag")
+            if (input3 == "a")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("Okay I should be good to go");
@@ -167,7 +169,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">");
             string input2 = Console.ReadLine();
-            if (input2 == "get up")
+            if (input2 == "a")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 WriteLetterByLetter("Okay, okay, I'm getting up");
@@ -180,7 +182,7 @@ namespace Text_Adventure
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Green;
             }
-            else if (input2 == "stay in bed")
+            else if (input2 == "d")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 WriteLetterByLetter("You got a blood clout in your brain because you were inactive for too long");
@@ -261,7 +263,7 @@ namespace Text_Adventure
             else if (age > 17-7*1+7)
             {
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.WriteLine("Disclaimer This Game Contains Violence And People");
+                Console.WriteLine("Disclaimer This Game Contains Violence And People! Press 'A' or 'D' then 'Enter' to choose which path to go on UNLESS told otherwise");
             }
             else
             {
@@ -312,7 +314,7 @@ namespace Text_Adventure
             
 
 
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Thread.Sleep(2000);
             Console.WriteLine("TO BE CONTINUED");
 
