@@ -57,7 +57,7 @@ namespace Text_Adventure
                 Thread.Sleep(3000);
                 WriteLetterByLetter("What is that noise?");
                 Thread.Sleep(1500);
-                WriteLetterByLetter("BEAR!!");
+                WriteLetterByLetter("BeAr!!");
                 Console.WriteLine();
             }
             else
