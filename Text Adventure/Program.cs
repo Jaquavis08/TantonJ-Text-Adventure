@@ -207,7 +207,7 @@ namespace Text_Adventure
             string input6 = Console.ReadLine();
             if (input6 == "reset")
             {
-
+                IntroToGame();
             }
         }
 
